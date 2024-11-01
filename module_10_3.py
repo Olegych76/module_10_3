@@ -3,12 +3,12 @@ from random import randint
 from time import sleep
 
 
-class Bank:
+class Bank(Thread):
     lock = Lock()
     balance = 0
 
     def __init__(self):
-        pass
+        Thread.__init__(self)
 
     def deposit(self):
         incr = randint(50, 500)
